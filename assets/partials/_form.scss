@@ -1,0 +1,170 @@
+
+
+.form {
+  padding: 2.5rem 5rem;
+  border-radius: 20px;
+  font-size: 16px;
+
+  &--login {
+    
+  }
+
+  &--signup {
+    
+  }
+  
+  &__wrapper {
+    
+  }
+  
+  &__container {
+    background-image: linear-gradient(to right, transparent 0% 50%, $secondary 50% 10%);
+    max-width: 1200px;
+    min-height: 70vh;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  }
+
+  &__group {
+    
+    display: grid;
+    row-gap: 1rem;
+    font-size: 16px;
+
+    &__content {
+      margin-bottom: 1rem;
+      &__heading {
+
+        &--login {
+          color: black;
+        }
+
+        &--signup {
+          color: white;
+        }
+      }
+    }
+  }
+
+  &__submit {    
+    border-radius: 5px;
+    padding: 0.5rem 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &--login {
+      background-color: $secondary;
+      color: white;
+    }
+
+    &--signup {
+      background-color: white;
+      color: $secondary;
+    }
+  }
+
+  &__inputGroup {  
+    
+    &--fullName {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-content: space-between;
+      
+      .name__wrapper {
+        width: 95%;
+
+        &--lastName {
+          margin-left: auto;
+        }
+
+        label {
+
+        }
+
+        input {
+          max-width: 100%;
+        }
+      }
+    }
+
+    &__label {
+      color: black;
+      opacity: 0.6;
+      font-size: 0.9em;
+      font-family: Arial, Helvetica, sans-serif;
+      display: block;
+
+      &--login {
+        color: black;
+      }
+
+      &--signup {
+        color: white;
+        opacity: 0.8;
+      }
+    }
+
+    &__input {
+      display: block;
+      width: 100%;
+      border: 1px solid lightgrey;
+      border-radius: 5px;
+      padding: 0.5rem 1rem;
+
+      &::placeholder {
+        
+      }
+    }
+  }
+
+  &__error {
+    color: $red;
+    font-size: 0.8em;
+  }
+
+  &__passwordGroup {    
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    input {
+      flex-grow: 1;
+    }
+
+    .passwordIcon {
+      position: absolute;
+      cursor: pointer;
+      right: 0;
+      padding: 0.8rem;      
+      border-left: 1px solid lightgrey;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  // &__checkbox {
+  //   padding: 0.5rem;
+  // }
+}
+
+.required {
+  color: $red;
+}
+
+.checkbox {
+
+  &--signup {
+    
+  }
+
+  input:checked~.checkbox--signup {
+    color: white;
+  }
+}

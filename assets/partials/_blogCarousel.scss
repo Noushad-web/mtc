@@ -1,0 +1,140 @@
+@import './mediaMixins';
+@import './colors';
+
+
+.carousel {
+  &__blog {
+
+    &--wrapper {
+
+      .react-multiple-carousel__arrow {
+        background-color: transparent;
+        color: rgba(0, 0, 0, 0.8);
+
+        @include desktopOnly {
+          &--right {
+            right: 0 !important;
+          }
+
+          &--left {
+            left: 0 !important;
+          }
+        }
+      }
+    }
+
+    &__item {
+      max-width: 310px;
+      min-height: 560px;
+      box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.55);
+      border-radius: 10px;
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+      margin:0 auto ; 
+      position: relative;
+      @include cardHover();
+
+      @include phoneOnly {
+        min-height: 470px;
+      }
+
+      &--heading {
+        margin-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-weight: normal;
+        font-size: 1.8em;
+        text-align: center;
+        font-family: $fontCondensed;
+        line-height: 1.1;
+        text-transform: uppercase;
+        color: black;
+
+        @include phoneOnly {
+          font-size: 1.3em;
+        }
+      }
+
+      &--description {
+        padding: 0 20px;
+        margin-top: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1em;
+        line-height: 1.5;
+        color: black;
+        text-align: center;
+        
+        @include phoneOnly {
+          font-size: 0.9em;
+        }
+      }
+
+      &--img {
+        position: relative;
+
+        img {
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+        }
+
+        &::after {
+          content: ' ';
+          position: absolute;
+          width: 100%;
+          background: linear-gradient(to top, white 0% 15%, transparent);
+          bottom: 0;
+          left: 0;
+          min-height: 30%;
+        }
+      }
+
+      &--link {
+        padding: 2.5px 25px 2.5px 20px;
+        color: white;
+        display: inline-block;
+        width: max-content;
+        text-transform: uppercase;
+        background-color: $red;
+        letter-spacing: 1px;
+        font-family: $fontCondensed;
+        clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
+        border-bottom-left-radius: 10px;
+        position: absolute;
+        bottom: 0;
+        font-size: 18px;
+
+        @include phoneOnly {
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+}
+
+@include desktopOnly {
+  .react-multiple-carousel__arrow {
+    color: $red !important;
+    background-color: $red !important;
+  }
+
+  .react-multiple-carousel__arrow--left {
+    left: 0 !important;
+
+    &::before {
+      transform: translateX(-1px);
+    }
+  }
+
+  .react-multiple-carousel__arrow--right {
+    right: 0 !important;
+
+    &::before {
+      transform: translateX(1px);
+    }
+  }
+}
+
+
+.react-multi-carousel-list {
+  padding: 0 0 5rem;
+}

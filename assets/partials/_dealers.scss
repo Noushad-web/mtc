@@ -1,0 +1,86 @@
+@import './mediaMixins';
+@import './colors';
+
+.dealer * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.dealer {
+  font-size: 16px;
+  // background-color: $secondary;
+  background-color: $tabAccordianBg;
+
+  &__countryHeading {
+    @include heading();
+  }
+  
+  &__stateHeading {
+    @include subheading();
+  }
+
+  &__address {
+    margin-top: 5px;
+    line-height: normal;    
+
+    a {
+      color: $red;
+    }
+
+    @include phoneOnly {
+      font-size: 0.9em;
+    }
+  }
+
+  &__contentBox {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1.5rem;    
+
+    &__column {      
+      width: 250px;
+      height: auto;
+      padding: .5rem 1rem;
+      box-shadow: 0 0 3px rgba(0,0,0, 0.2);
+      color: black;
+      background-color: white;
+    }
+  }
+}
+
+.privacy-policy {
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+
+    @include phoneOnly {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &--heading {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    line-height: normal;
+  }
+
+  &--icon {
+    margin-top: 5px;
+    width: 25px;
+    overflow: hidden;
+    margin-bottom: auto;
+    position: relative;
+  }
+}
+
+.cookie-policy {
+  a {
+    color: $red;
+  }
+}

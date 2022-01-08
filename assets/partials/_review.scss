@@ -1,0 +1,106 @@
+@import './mediaMixins';
+@import './colors';
+@import './mixins';
+
+.review {  
+  margin-bottom: 15px;
+  padding: 0.5rem 1.5rem;
+  font-size: 16px;
+
+  @include phoneOnly {
+    font-size: 13px;
+    padding: 0.5rem ;
+  }
+
+  &__wrapper {
+    padding-top: 1rem;    
+
+    @include phoneOnly {
+      padding-top: 0.5rem;
+    }
+  }
+
+  &__userDiv {
+    display: flex;
+    column-gap: 1rem;
+    row-gap: 0.5rem;
+    padding: 0.3rem 0;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    text-transform: capitalize;
+    flex-wrap: wrap;
+
+    @include phoneOnly {
+      row-gap: 0.3rem;
+      padding: 0;      
+    }
+
+    &__icon {
+      font-size: 2em;
+      color: $secondary;      
+    }
+
+    &__date {
+      width: 100%;
+      padding-left: 0.5rem;
+    }
+  }
+
+  &__stars {
+    color: gold;
+
+    &__wrapper {
+
+    }
+  }
+
+  &__comment {
+    margin-top: 0.5rem;
+    background-color: white;
+    border-radius:10px;
+    padding: 0.5rem;
+    color: #747474;
+    border: 1px solid lightgray;
+    min-height: 5rem;
+
+    @include phoneOnly {
+      border-radius: 5px;
+      min-height: 3rem;
+    }
+  }
+
+
+  &__pagination {
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    @include phoneOnly {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+
+    &__button {
+      background-color: $red;
+      color: white;
+      padding:0.3rem 1rem;
+      margin-left: .4rem;
+      font-family: Arial, Helvetica, sans-serif;
+
+      @include phoneOnly {
+        padding: 0.2rem 0.6rem;
+      }
+
+      // &--active {
+      //   background-color: black;
+      //   color: white;
+      //   clip-path: polygon(0 0, 70% 0%, 100% 100%, 0% 100%);
+      // }
+      &:focus {
+        background-color: #bd1417;
+        color: white;      
+      }
+    }
+  }
+}

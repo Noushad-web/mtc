@@ -1,0 +1,39 @@
+.text-black {
+  color: black;
+}
+
+.d-none {
+  display: none;
+}
+
+.line-height-normal {
+  line-height: normal;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.dropdown__option:last-child a {
+  border-bottom: none;
+}
+
+.strike {
+  text-decoration: line-through;  
+}
+
+.font-bold {
+  font-weight: bold !important;
+}
+
+.ml--1 {
+  margin-left: -0.5rem;
+}
+
+.price {
+  font-size: 30px !important;
+
+  @include phoneOnly {
+    font-size: 18px !important;
+  }
+}

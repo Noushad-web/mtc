@@ -1,0 +1,51 @@
+@import './mediaMixins';
+@import './colors';
+
+
+.shipping {
+  font-size: 16px;
+  background-color: $tabAccordianBg;
+
+  &__heading {
+    @include heading();
+  }
+
+  &__subheading {
+    @include subheading();
+  }
+
+  &__itemHeading {
+    @include itemHeading();
+  }
+
+  &__contentBox {
+
+    a {
+      color: $red;
+    }
+
+    ul {
+      list-style: initial;
+      padding-left: 30px;
+    }
+
+    ol {
+      list-style: decimal;
+      padding-left: 30px;
+
+      li {
+        margin-top: 0.8rem;
+      }
+    }
+
+    .alphabetsList {
+      ol {
+        list-style: lower-alpha;
+      }
+    }
+
+    @include phoneOnly {
+      font-size: 13px;
+    }
+  }
+}

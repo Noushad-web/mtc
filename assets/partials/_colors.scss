@@ -1,0 +1,26 @@
+$red : #e82428;
+$secondary:#213444;
+$textBlue: #255784;
+$tabAccordianBg:#f8f8f8;
+$textTeal:#036672;
+$textMute: #6B7280;
+// $textLightBlack: #5a5e6a;
+$fontCondensed: 'nimbussantconbold',
+sans-serif;
+
+.text-teal {
+  color: $textTeal;
+}
+
+.text-muted {
+  color: $textMute;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.text-light {
+  color: white;
+  opacity: 0.8;
+}

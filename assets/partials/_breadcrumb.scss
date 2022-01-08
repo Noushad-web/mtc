@@ -1,0 +1,94 @@
+@import './colors';
+@import './mediaMixins';
+
+.breadcrumb {
+  font-family: $fontCondensed;
+  font-size: 20px;
+  color: white;
+  background-color: $red;
+  min-width: 100px;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  text-align: center;
+  margin-left: -10px;
+
+  &::after {
+    content: '﹥';
+    padding-left: 0.1em;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  @include smallTab {
+    font-size: 18px;
+    padding: 0.5rem 1rem;
+    min-width: 80px;
+    padding: 0.5rem 1rem 0.5rem 0;
+  }
+
+  @include phoneOnly {
+    font-size: 14px;
+    padding: 0.5rem 1rem;
+    max-width: fit-content;
+    font-weight: lighter;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    min-width: auto;
+    margin-left: -0.5rem;
+    white-space: nowrap;
+  }
+
+  &__wrapper {
+    display: flex;
+    margin-left: 10px;
+  }
+
+  &--active {
+    background-color: rgba(0, 0, 0, 1);
+    padding-left: 1rem 0.5rem;
+    z-index: 0;
+    margin-left: 0px;
+    min-width: 80px;
+    position: relative;
+
+    @include smallTab {
+      white-space: nowrap;
+    }
+
+    @include phoneOnly {
+      transform: transslateX(0);
+      white-space: nowrap;
+      padding-left: 0.5rem;
+      min-width: 40px;
+    }
+
+    &::after {
+      content: " ";
+      position: absolute;
+      right: -10px;
+      transform: skew(10deg, 0);
+      background-color: black;
+      width: 100%;
+      z-index: -1;
+      height: 100%;
+      top: 0;
+    }
+
+    &::before {
+      content: " ";
+      position: absolute;
+      left: -10px;
+      transform: skew(8deg, 0);
+      background-color: black;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      z-index: -1;
+    }
+  }
+
+  &__listStyle {
+    display: flex;
+  }
+}

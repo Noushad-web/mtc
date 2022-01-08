@@ -1,0 +1,124 @@
+$yello : #cfb332;
+$footerBlack : #202020;
+@import './mediaMixins';
+
+.footer {
+  width: 100vw;
+
+  &__wrapper {
+    width: 100%;
+    background-color: $footerBlack;
+    color: white;
+    padding: 2rem 0 0;
+  }
+
+  &__column {
+
+    min-height: 300px;
+    padding-left: 30px;
+    background-color: #202020;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+
+    @include phoneOnly {
+      border: none;
+      min-height: 0;
+      padding-left: 0;
+    }
+
+    @include smallTab {
+      border: none;
+      min-height: 0;
+      padding-left: 0;
+    }
+
+    &--company {
+      background-color: $footerBlack;
+      border: 0;
+    }
+
+    &--about {}
+
+    &--policy {}
+
+    &--contact {
+      p {
+        font-weight: 400;
+        color: #bdbdbd;
+        opacity: 0.9;
+      }
+      
+      strong {
+        color: white;        
+        line-height: 25px;
+      }
+
+      a {
+        color: rgba(233, 196, 63, 1);
+      }
+
+      @include phoneOnly {
+        padding-bottom: 30px;
+      }
+
+      @include smallTab {
+        padding-bottom: 30px;
+      }
+    }
+  }
+
+  &__row {
+    gap: 2rem;
+    justify-content: space-evenly;
+
+    &__column {
+      min-width: 20%;
+      padding-left: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      justify-content: center;
+
+      &__heading {
+        font-size: 1.5rem;
+      }
+
+      &__about {
+        max-width: 40ch;
+      }
+
+      &__nav {
+        display: flex;
+        flex-direction: column;
+
+        a {
+          color: $yello;
+          text-transform: none;
+        }
+      }
+
+      &--contact {
+
+        address {
+          font-style: normal;
+          max-width: 40ch;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+        }
+      }
+    }
+
+  }
+
+  &__logoImg {}
+
+  &__heading {}
+
+  &__lower {
+    font-size: 1rem;
+
+    @include phoneOnly {
+      font-size: 0.8rem;
+    }
+  }
+}

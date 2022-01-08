@@ -1,0 +1,63 @@
+@import './mediaMixins';
+@import './colors';
+
+.blackFridayBox {
+  min-height: 80vh;
+  display: grid;
+  align-items: normal;
+  justify-items: center;
+  padding-top: 2rem;
+  z-index: 1;
+
+
+  &__content {
+    border: 2px solid $red;
+    padding: 2rem;
+    position: relative;
+
+    .text-black {
+      font-size: 150px;
+      font-weight: 900;
+      line-height: 70px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+    }
+
+    .text-friday {
+      font-size: 160px;
+      font-weight: 900;
+      line-height: 100px;
+      margin-top: 30px;
+      text-transform: uppercase;
+    }
+
+    .legendText {
+      text-transform: uppercase;
+      color: whitesmoke;
+      display: inline-block;
+      position: absolute;
+      background-color: #111111;
+      padding: 0 .5rem;
+
+      &--tikka {
+        top: 0;
+        transform: translate(-50%, -15px);
+        left: 50%;
+      }
+
+      &--superDiscount {
+        bottom: 0;
+        transform: translate(-50%, 12px);
+        left: 50%;
+      }      
+    }    
+  }
+
+  .shippingContent {
+    & .annoucementBar {
+      background-color: $red;
+      color: white;            
+    }
+
+  }
+}

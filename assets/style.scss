@@ -1,0 +1,153 @@
+@import './partials/header';
+@import './partials/footer';
+@import './partials/hero';
+@import './partials/centerCarousel';
+@import './partials/product';
+@import './partials/singleProductPage';
+@import './partials/breadcrumb';
+@import './partials/singleBlog.scss';
+@import './partials/blogArchive';
+@import './partials/writeComment';
+@import './partials/aboutUs';
+@import './partials/contactUs';
+@import './partials/mediaMixins';
+@import './partials/menu';
+@import './partials/customer';
+@import './partials/featureProduct';
+@import './partials/popularCategories';
+@import './partials/blogCarousel';
+@import './partials/mixins';
+@import './partials/dealers';
+@import './partials/shipping';
+@import './partials/review';
+@import './partials/faq';
+@import './partials/utils';
+@import './partials/cart';
+@import './partials/form';
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@200;300;400;500;600;700&display=swap');
+
+
+// global
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+
+  &--headerLogo {
+    max-width: 80%;
+    margin-top: 1rem;
+    height: auto;
+  }
+}
+
+.slick-slide {
+  border: none !important;
+}
+
+.horizontalDivider {
+  width: 150px;
+  height: 1px;
+  align-self: center;
+  background-color: rgba(255, 255, 255, 0.5);
+
+  @include phoneOnly {
+    display: none;
+  }
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.text-red {
+  color: $red;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.bg-grey {
+  background-color: $tabAccordianBg;
+}
+
+.blogCard__wrapper {
+  min-height: 100vh;
+}
+
+.mb-16 {
+  margin-bottom: 4rem;
+}
+
+
+button {
+
+  &:focus {
+    outline: 0;
+    border: 0;
+  }
+}
+
+.builder {
+
+  &__accordian {
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: transform 2s ease;
+
+    // &::after {
+    //   content: '◂';
+    //   position: absolute;
+    //   right: 10px;
+    //   transition: all .2s ease;
+    //   font-size: 1.5rem;
+    //   transform: rotate(0deg);
+    // }
+
+    &--panelItem {
+      border: 1px solid #d1d1d1;
+
+      @include phoneOnly {
+        font-size: 13px;
+      }
+    }
+
+    &--panelHeading {
+      font-size: 15px;
+
+      @include phoneOnly {
+        font-size: 14px;
+      }
+    }
+
+    // &--panelText {
+    // }
+    
+    &--icon {
+      margin-left: auto;
+      font-size: 1.5rem;
+    }
+    
+    &:focus &--icon {
+      transform: rotate(-90deg);
+    }
+  }
+}
+
+.builder-accordion-detail {
+  max-height: fit-content !important;  
+}
+
+.google-ul {
+  list-style: inherit;
+  padding-left: 30px;
+}
+
+.ModalOverlay {
+  z-index: 1;
+}
+
+.signupButton {
+  font-family: $fontCondensed;
+}

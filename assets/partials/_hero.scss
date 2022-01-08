@@ -1,0 +1,45 @@
+$red : #e82428;
+.hero {
+  margin-left: 8rem;
+  padding-top: 8rem;
+
+  &__wrapper {
+    background-image: url('https://images.unsplash.com/photo-1585589266882-2cb137ba7db6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1925&q=80');
+    background-size: cover;
+    min-height: 100vh;
+    background-position: center;
+    background-color: rgba(0,0,0,0.5);
+  }
+
+  &__heading {
+    font-size: 3rem;
+    color: white;
+    max-width: 22ch;
+    font-weight: 700;
+  }
+
+  &__para {
+    font-size : 1.2rem;
+    color: white;
+    max-width: 40ch;
+  }
+
+  &__button {
+    max-width: 510px;
+    &__layout {
+      color: white;
+      padding: 1rem ;
+      font-size: 600;
+
+      &--button {
+        background: linear-gradient(82deg, #e82428 0% 94%, transparent 95% 100%);
+        padding-right: 1.5rem;
+      }
+
+      &--span {
+        background-image: linear-gradient(78deg, transparent 0% 5%, rgba(0, 0, 0, 0.8) 5% 100%);
+        padding-left: 2rem;
+      }
+    }    
+  }
+}

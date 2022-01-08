@@ -1,0 +1,23 @@
+@import './mediaMixins';
+@import './colors';
+
+.menu {
+
+
+  &__wrapper {
+    width: 100vw;    
+  }
+
+  &__navigation {
+    background-color: $red;
+    color: white;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: auto;
+  }
+
+  &__item {
+    background-color: $red;
+    color: white;
+  }
+}

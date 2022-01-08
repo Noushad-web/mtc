@@ -1,0 +1,577 @@
+@import './colors';
+@import './mediaMixins';
+
+@include smallTab {
+  .d-sm-none {
+    display: none;
+  }
+}
+
+@include phoneOnly {
+  .d-sm-none {
+    display: none;
+  }
+}
+
+@mixin container {
+  width: 100%;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  box-sizing: border-box;
+  max-width: 1200px;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.whiteBgTriangle {
+  margin-top: -1rem;
+}
+
+.divider {
+
+  @include phoneOnly {
+    margin: .2rem 0 !important
+  }
+}
+
+.singleProductPage {
+
+  &__container {
+    @include container();
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @include smallTab {
+      grid-template-columns: 100%;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      row-gap: .5rem;
+    }
+
+    @include phoneOnly {
+      grid-template-columns: 100%;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      row-gap: .5rem;
+    }
+  }
+
+  &__carousel {
+    width: 90%;
+    height: 100%;
+    margin: auto;
+
+    @include smallTab {
+      width: 100%;
+    }
+
+    @include phoneOnly {
+      width: 100%;
+    }
+
+    &--dnone {
+      display: none;
+
+      @include smallTab {
+        display: block;
+        &--h1 {
+          text-align: center;
+        }
+
+        &--h2 {
+          letter-spacing: normal;
+        }
+      }
+
+      @include phoneOnly {
+        display: block;
+
+        &--h1 {
+          font-size: 25px !important;
+          text-align: center;
+        }
+
+        &--h2 {
+          font-size: 16px !important;
+          letter-spacing: normal;
+        }
+      }
+    }
+  }
+
+  &__itemHeading {
+    background-image: url('../../public/Rectangle\ 3.png');
+    background-size: 100% 100%;
+    min-height: 47px;
+    color: white;
+    text-align: center;
+    padding: .5rem 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    // background-image: linear-gradient(45deg, transparent 0% 7%, #213444 7% 93%, transparent 93% 100%);
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    font-size: 25px;
+    letter-spacing: 5px;
+    line-height: normal;
+    font-weight: 600;   
+    
+    @include smallTab {  
+      font-size: 22px;
+      letter-spacing: normal;
+    }
+
+    @include phoneOnly {
+      background-image: url('../../public/Rectangle\ 3.png');
+      background-size: 100% 100%;
+      font-size: 16px;
+      letter-spacing: normal;
+      padding: .3rem .7rem;
+      margin-top: .2rem;
+      margin-bottom: 1rem;
+      margin-left: 0;
+    }
+  }
+
+  &__title {
+    line-height: 40px;
+    text-align: start;
+    font-size: 40px;
+    font-family: Roboto, sans-serif;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 1);
+
+    @include smallTab {
+      font-size: 30px;
+      line-height: 0px;
+    }
+
+    @include phoneOnly {
+      margin-left: 0;
+    }
+  }
+
+  &__feature {
+    @include phoneOnly {
+      font-size: 13px;
+    }
+
+    &__name {
+      text-align: left;
+      padding-left: 1.5rem;
+      font-weight: 700;
+    }
+
+    &__value {
+      padding-right: 1.5rem;
+      text-align: right;
+      color: $textBlue;
+      font-weight: 600;
+      text-transform: capitalize;
+
+      &--text-black {
+        color:black;
+      }
+    }
+  }
+
+  &__price {
+    padding-left: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    @include phoneOnly {
+      font-size: 20px !important;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    span {
+      font-size: 15px;
+      font-weight: normal;
+      align-self: baseline;
+
+      @include phoneOnly {
+        font-size: 12px;
+        margin: 0;
+        margin-right: 1.5rem;
+        align-self: center;
+      }
+    }    
+  }
+
+  &__btnWrapper {
+    display: flex;
+    gap: 2rem;
+    margin-left: 1.5rem;
+
+    @include phoneOnly {
+      justify-content: flex-end;
+    }
+
+    &__counterBtn {
+      display: flex;
+      justify-content: space-around;
+      border: 1px solid rgb(175, 175, 175);
+      max-width: 80px;      
+
+      @include phoneOnly {
+        max-width: 60px;
+      }
+
+      input {
+        max-width: 50px;
+        padding-left: 35%;
+
+        @include phoneOnly {
+          max-width: 30px;
+          padding: 0.1rem 0.2rem;
+          font-size: 13px;
+        }
+      }
+
+      button {
+        color: $red;
+        font-size: 1.2rem;
+        margin: 3px 8px 3px 0;
+
+        @include phoneOnly {
+          font-size: 0.8rem;
+        }
+      }
+    }
+
+    &__addToCartBtn {
+      background-color: $red;
+      clip-path: polygon(0 0, 100% 0%, 90% 100%, 0% 100%);
+      text-transform: uppercase;
+      font-weight: 500;
+      font-family: $fontCondensed;
+      text-align: left;
+      border-radius: 0;
+      font-size: 20px;
+      color: white;
+      padding: 5px 2.5rem 5px 1.5rem;
+
+      @include phoneOnly {
+        padding: 0 1.5rem 0 0.5rem;
+        font-size: 16px;
+        min-width: fit-content;
+        margin-right: 1.5rem;
+      }
+    }
+  }
+
+  &__accordian {
+    
+    &__wrapper {
+      margin-top: 2rem;
+
+      @include desktopOnly {
+        grid-column: 1/3;
+      }
+
+      .tabList {
+        display: flex;
+        justify-content: space-evenly;
+
+        @include smallTab {
+          justify-content: space-between;
+        }
+
+        @include phoneOnly {
+          justify-content: space-between;
+        }
+
+        .tabItem {
+          font-family: $fontCondensed;
+          font-size: 25px;
+          color: $textBlue;
+          padding: 0.5rem 3rem 0.5rem 2rem;
+          text-transform: uppercase;
+          width: 25%;
+
+          @include smallTab {
+            font-size: 20px;
+            padding: 0.5rem 1rem;
+            width: auto;
+          }
+
+          @include phoneOnly {
+            font-size: clamp(3.5vw, 4vw, 6vw);
+            padding: 0;
+            width: auto;      
+            text-transform: capitalize;
+          }
+
+          &__wrapper {
+
+            &:focus {
+              border: 0;
+              outline: 0;
+            }
+          }
+
+          &--active {
+            font-family: $fontCondensed;
+            color: $secondary;
+            font-size: 25px;
+            text-transform: uppercase;
+            padding: 0.5rem 3rem 0.5rem 2rem;
+            background-image: linear-gradient(75deg,$tabAccordianBg 0% 90%, transparent 90% 100%);
+
+            &:last-child {
+              background-image: linear-gradient(90deg, $tabAccordianBg 0% 90%, $tabAccordianBg 100% 100%);
+            }
+
+
+            @include smallTab {
+              font-size: 23px;
+              background-image: none;
+              background-color: $tabAccordianBg;
+            }
+
+            @include phoneOnly {
+              font-size: 4vw;
+              padding: 0;
+              width: auto;
+              background-image: none;
+              text-transform: capitalize;
+              background-color: $tabAccordianBg;
+              padding: 0.2rem 0.5rem;
+            }
+
+            &:focus {
+              outline: none;
+              border: none;
+            }
+          }
+        }
+      }
+
+      .tabPanelList {
+        $sidespace: 1.5rem;
+        font-size: 16px;
+        
+
+        @include smallTab {
+          font-size: 16px;
+        }
+
+        @include phoneOnly {          
+          font-size: 13px;
+        }
+
+        background-color: $tabAccordianBg;
+        padding: 0 1.5rem;
+        padding-bottom: 0;
+
+        @include phoneOnly {
+          padding: 0 0.5rem;
+        }
+
+        .tabPanelItem {
+          display: none;
+
+          &--active {
+            display: block;
+            padding: 0 0 1rem 0;
+          }
+
+          iframe {
+            width: 100%;
+            height: auto;
+            min-height: 700px;
+            padding: 2rem 0;
+
+            @include smallTab {
+              min-height: 400px;
+            }
+
+            @include phoneOnly {
+              min-height: auto;
+              padding: 1rem 0;
+            }
+          }
+
+          &__description {
+            font-size: inherit;
+
+            h3 {
+              font-weight: 500;
+              font-family: $fontCondensed;
+              font-size: 30px;
+              letter-spacing: 1px;
+              text-transform: uppercase;
+
+              @include smallTab {
+                font-size: 27px;
+              }
+
+              @include phoneOnly {
+                font-size: 22px;
+              }
+            }
+
+            &--para {
+              color: #000;
+
+              .specification-container {
+                // background: url('../../public/triangleWhite.png');
+                background-color: white;
+                margin: 0 -$sidespace;
+                margin-top: 0;
+                padding-top: 5.5rem;
+                padding-bottom: 2.5rem;
+
+                @include smallTab {
+                  padding-top: 2.5rem;
+                }
+
+                @include phoneOnly {
+                  padding-top: 1.5rem;
+                  padding-bottom: 2.5rem;
+                }
+              }
+
+              .specification-heading {
+                text-align: center;
+                padding-top: 1rem;
+              }
+
+              .specification-item {
+                display: flex;
+                flex-direction: column;
+
+                li {
+                  display: flex;
+                  width: 700px;
+                  grid-gap: 1rem;
+                  gap: 2rem;
+                  justify-content: space-between;
+                  margin: auto;
+                  border-top: 1px solid lightgrey;
+                  padding: 0.5rem;
+                  text-align: right;
+
+                  @include phoneOnly {
+                    width: 100% !important;
+                  }
+
+                  strong {
+                    text-align: left;
+                  }
+                }
+
+                li:last-child {
+                  border-bottom: 1px solid lightgrey;
+                }
+              }
+            }
+
+            ul {
+              display: flex;
+              flex-direction: column;
+              padding-bottom: 2rem;
+
+              @include phoneOnly {
+                padding-bottom: 0.8rem;
+              }
+
+              li {
+                display: flex;
+                width: 700px;
+                grid-gap: 1rem;
+                gap: 2rem;
+                justify-content: space-between;
+                margin: auto;
+                border-top: 1px solid lightgrey;
+                padding: 0.5rem;
+                text-align: right;
+
+                strong {
+                  text-align: left;
+                }
+
+                @include phoneOnly {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.relatedProduct {  
+  
+  &__wrapper {
+    padding-top: 60px;
+    background-color: $tabAccordianBg;
+    padding-bottom: 10rem;
+
+    @include smallTab {
+      padding-top: 20px;
+    }
+
+    @include phoneOnly {
+      padding-top: 20px;
+      padding-bottom: 5rem;
+    }
+  }
+
+  &__container {
+    @include container();
+  }
+
+  &__heading {
+    text-align: center;
+
+    & h1 {
+      color: $secondary;
+      font-size: 58px;
+
+      @include phoneOnly {
+        font-size: 25px;
+        font-weight: 700;
+      }
+    }
+
+    & h3 {
+      color: white;
+      background-image: url('../../public/Rectangle\ 3.png');
+      background-size: 100% 100%;
+      font-size: 30px;
+      width: fit-content;
+      padding: 0 30px;
+      margin: auto;
+      font-weight: 600;
+      letter-spacing: 10px;
+
+      @include phoneOnly {
+        font-size: 22px;
+        padding: 0 15px;
+      }
+    }
+  }
+
+}
