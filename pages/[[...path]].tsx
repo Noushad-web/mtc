@@ -25,12 +25,14 @@ import { getLayoutProps } from '@lib/get-layout-props'
 import Script from 'next/script';
 
 
-export async function getStaticProps({
-  params,
-}: GetStaticPropsContext<{ path: string[] }>) {
+export async function getStaticProps(context : GetStaticPropsContext<{ path: string[] }>) {
   const page = await resolveSwellContent('page', {
-    urlPath: '/' + (params?.path?.join('/') || ''),
+    urlPath: '/' + (context.params?.path?.join('/') || ''),
   })
+
+  console.log('====================================');
+  console.log('context = ', page);
+  console.log('====================================');
 
   return {
     props: {
@@ -47,6 +49,7 @@ export async function getStaticProps({
 export async function getStaticPaths({ locales }: GetStaticPathsContext) {
   const pages = await builder.getAll('page', {
     options: { noTargeting: true },
+    fields: 'id,data.url',
     apiKey: builderConfig.apiKey,
   })
   
@@ -60,7 +63,10 @@ export default function Path({
   page,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const router = useRouter()
-  // const { theme } = useThemeUI()
+
+  // console.log('====================================');
+  // console.log('page: ', page);
+  // console.log('====================================');
 
   if (router.isFallback) {
     return <h1>Loading...</h1>

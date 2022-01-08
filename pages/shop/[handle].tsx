@@ -20,12 +20,10 @@ import Head from 'next/head'
 import { useThemeUI } from 'theme-ui'
 import { getLayoutProps } from '@lib/get-layout-props'
 import { useEffect } from 'react'
-import useSwr from 'swr'
 builder.init(builderConfig.apiKey!)
 Builder.isStatic = true
 
 const builderModel = 'product-page'
-// const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
 export async function getStaticProps(context: GetStaticPropsContext<{ handle: string }>) {
   const product = await getProduct({
@@ -43,15 +41,10 @@ export async function getStaticProps(context: GetStaticPropsContext<{ handle: st
 
 export async function getStaticPaths({ locales }: GetStaticPathsContext) {
 
-  // const { data, error } = useSwr('/api/apiProduct', fetcher)
   const fetchedData: any = await (await fetch('http://[::1]:3004/api/apiProduct')).json();
-console.log('====================================');
-console.log(fetchedData.results?.map(({slug}: {slug: string}) => `/shop/${slug}`));
-console.log('====================================');
-  const paths = await getAllProductPaths()
+
   return {
     // TODO: update to /product
-    // paths: paths?.map((path) => `/shop/${path}`) ?? [],
     paths: fetchedData.results?.map(({slug}: {slug: string}) => `/shop/${slug}`) ?? [],
     fallback: 'blocking',
   }
@@ -84,7 +77,7 @@ export default function Handle({
   }
 
   return router.isFallback && isLive ? (
-    <h1>Loading...</h1> // TODO (BC) Add Skeleton Views
+    <h1>Loading...</h1> // TODO Add Skeleton Views
   ) : (
     <BuilderComponent
       isStatic

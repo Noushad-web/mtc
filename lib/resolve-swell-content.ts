@@ -16,9 +16,10 @@ export async function resolveSwellContent(
     .get(modelName, {
       userAttributes: targetingAttributes,
       includeRefs: true,
-      preview: modelName,
+      // preview: modelName,
       cachebust: true,
-    } as any)
+      omit: 'data.cssCode,data.blocks'
+    })
     .toPromise()
 
   if (page) {
